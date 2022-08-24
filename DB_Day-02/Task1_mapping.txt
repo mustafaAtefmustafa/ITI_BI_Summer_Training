@@ -1,0 +1,42 @@
+#Problem 1
+
+Musician (ID PK, Name, St, City, Phone)
+Album (ID PK, Date, Title, MID FK)
+Instrument (Name PK, Key)
+Song (Title PK, Author, AID FK)
+Musician_Song ((MID FK, STitle FK) PK)
+Musician_Instrument ((MID FK, INAME FK) PK)
+
+
+#Problem 2
+
+Sales office (NUM PK, Loc, EID FK)
+Employee (ID PK, Name, SNUM FK)
+Property (ID PK, Add, City, State, Zip, SNUM FK)
+Owner(ID PK, Name)
+Prop_Owner ((OID FK, PID) PK, Percent-owned)
+
+
+#Problem 3
+
+Patient (ID PK, Name, DOB, WID FK, CID FK)
+Consultant (ID PK, Name)
+Ward (ID PK, Name, NID FK)
+Nurse (ID, PK, Name, WID FK)
+Drug (Code PK, Rec Dosage)
+Drug_Brand ((DCode FK, Brand) PK)
+Patient_Consultant ((PID FK, CID FK) PK)
+Patient_Nurse_Drug ((PID FK, Date, Time) PK, Dosage, DID FK, NID FK)
+
+
+#Problem 4
+
+Airline (ID PK, Name, Address, Contact Person)
+Employee (ID PK, Name, Address, Day, Month, Year, Position, Gender, AirlineID FK)
+Transactions (ID PK, Desc, Date, Amount, AirlineID FK)
+Aircraft_Crew (ID PK, Capacity, Model, Crew_ID, Maj.Pilot, Ass.Pilot, Hostess1, Hostess2, AirlineID FK)
+Route (ID PK, Distance, Origin, Destination, Classification)
+Aircraft_Route ((AircraftID FK, RouteID FK) PK, Price/Pass, #pass, Dept DateTime, ArrDateTime)
+Airline_Phone ((AirlineID, phones) PK)
+Employee_Quals ((Emp_ID, quals) PK)
+
