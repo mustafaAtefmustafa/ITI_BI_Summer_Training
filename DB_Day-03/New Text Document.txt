@@ -1,0 +1,49 @@
+# Problem1
+-Initially:
+table (Companyname, companybranch, company address, custname, custnumber, custaddress, salesordernumber, salesorderdate, clerknumber, clerkname, ItemOrdered, ItemDesc, ItemQuan, UnitPrice)
+
+-first normal form:
+1- Company (CompanyName PK, CompanyBranch, CompanyAddress)
+2- Order ((CompanyName, SalesOrderNum) PK, CustNumber, CustAddress, SalesOrderDate, ClerkNumber, ClerkName)
+3- Item ((SalesOrderNum, ItemOrderedNum) PK, ItemDesc, ItemQuan, UnitPrice)
+
+-Second normal form:
+1- No Change ==> Company (CompanyName PK, CompanyBranch, CompanyAddress)
+2- Order ((CompanyName, SalesOrderNum) PK)
+4- Order_Details (SalesOrderNum Pk, CustNumber, CustAddress, SalesOrderDate, ClerkNumber, ClerkName)
+3- Item ((SalesOrderNum, ItemOrderedNum) PK, ItemQuan)
+5- Item_desc (ItemOrdered PK, ItemDesc, UnitPrice)
+
+-Third normal form:
+1- No Change ==> Company (CompanyName PK, CompanyBranch, CompanyAddress)
+2- No Change ==> Order ((CompanyName, SalesOrderNum) PK)
+3- No Change ==> Item ((SalesOrderNum, ItemOrderedNum) PK, ItemQuan)
+5- No Change ==> Item_desc (ItemOrdered PK, ItemDesc, UnitPrice)
+4- Order_Details (SalesOrderNum PK, SalesOrderDate, CustNumber, ClerkNumber)
+6- Customer (CustNumber PK, CustomerAddress)
+7- Clerk (ClerkNubmer PK, ClerkAddress)
+
+---------------------------------------------------------------------------------------------------------------------
+# Problem 2
+-Initially:
+table (Dept#, DeptName, Loc, MgrName, MGrID, Tel Ext, Customer#, CustNAme, DateOFComp, Nature)
+
+-first normal form:
+1- Dept (Dept# PK, DeptName, Loc, MgrName, MGrID, Tel Ext)
+2- Customer ((Dept#, Cust#) PK, CustName, DateOfComp, NatureOfComp)
+
+-second normal form:
+1- No Change ==> Dept (Dept# PK, DeptName, Loc, MgrName, MGrID, Tel Ext)
+2- Complaint ((Dept#, Cust#) PK, DateOfComp, NatureOfComp)
+3- Customer (Cust#, CustName)
+
+
+-Third normal form:
+1- Dept (Dept# PK, DeptName, Loc , Tel Ext, MGRID)
+4- Dept_MGR (MGRID PK, MGRName)
+2- No Change ==> Complaint ((Dept#, Cust#) PK, DateOfComp, NatureOfComp)
+3- No Change ==> Customer (Cust#, CustName)
+
+
+
+
