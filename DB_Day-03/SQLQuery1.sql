@@ -67,3 +67,13 @@ ON e.SSN = d.MGRSSN
 SELECT e.* , de.*
 FROM Employee e LEFT JOIN Dependent de
 ON e.SSN = de.ESSN
+--13
+INSERT INTO Employee (SSN, Superssn, Salary, Dno)
+VALUES (102672, 112233, 3000, 30)
+--14
+INSERT INTO Employee (SSN, Dno)
+VALUES (102660, 30)
+--15
+UPDATE Employee
+SET Salary = Salary + 0.2 * Salary
+WHERE SSN = 102672
