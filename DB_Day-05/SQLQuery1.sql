@@ -63,3 +63,22 @@ FROM Instructor
 SELECT s.St_Fname, ss.*
 FROM Student s, Student ss
 WHERE s.St_super = ss.St_Id
+
+--14
+SELECT * FROM 
+(
+SELECT * , 
+ROW_NUMBER() OVER (PARTITION BY Dept_Id ORDER BY Salary DESC) r
+FROM Instructor
+WHERE Salary IS NOT NULL
+) t1
+WHERE r IN (1,2)
+
+--15
+SELECT * FROM 
+(
+SELECT * , 
+DENSE_RANK() OVER (PARTITION BY Dept_Id ORDER BY newid()) r
+FROM Student
+) t1
+WHERE r = 1
