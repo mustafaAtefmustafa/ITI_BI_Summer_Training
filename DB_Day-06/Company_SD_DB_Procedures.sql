@@ -13,26 +13,32 @@ IF @n >= 3
 PRINT(CONCAT('The number of employees in the project ', @prj_name ,'  is 3 or more'))
 ELSE
 BEGIN
-PRINT(CONCAT('The following employees work for project ',@prj_name))
-DECLARE @fullname VARCHAR(30)
-DECLARE @i INT = 1
-WHILE @i <= @n
-BEGIN
-SET @fullname = (SELECT full_name FROM
-(SELECT CONCAT(fname,' ', lname) as full_name, ROW_NUMBER() OVER(ORDER BY fname)r
+SELECT CONCAT('The following employees work for project ',@prj_name,' ', fname,' ', lname)
 FROM Employee
 JOIN Works_for
 ON SSN = ESSn
 JOIN Project
-ON Pno = Pnumber
-WHERE Pname = @prj_name) as t 
-WHERE r = @i)
-PRINT(@fullname)
-SET @i = @i + 1
+ON Pnumber = pno
+WHERE Pname = @prj_name
+--DECLARE @fullname VARCHAR(30)
+--DECLARE @i INT = 1
+--WHILE @i <= @n
+--BEGIN
+--SET @fullname = (SELECT full_name FROM
+--(SELECT CONCAT(fname,' ', lname) as full_name, ROW_NUMBER() OVER(ORDER BY fname)r
+--FROM Employee
+--JOIN Works_for
+--ON SSN = ESSn
+--JOIN Project
+--ON Pno = Pnumber
+--WHERE Pname = @prj_name) as t 
+--WHERE r = @i)
+--PRINT(@fullname)
+--SET @i = @i + 1
+--END
 END
 END
-END
---EXECUTE num_emp 'Al Rawdah'
+EXECUTE num_emp 'Al Rabwah'
 
 GO
 -- Procedure 3

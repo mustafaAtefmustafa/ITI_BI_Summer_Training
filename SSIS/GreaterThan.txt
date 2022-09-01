@@ -1,0 +1,9 @@
+Crs_Name,Crs_Id,Crs_Duration,Top_Name
+unix,400,50,Operating System
+sql server,500,60,DB
+oracle,900,50,DB
+oop,300,80,Programming
+java,800,60,Programming
+c#,600,80,Programming
+c progamming,200,60,Programming
+asp.net,1000,60,Web
