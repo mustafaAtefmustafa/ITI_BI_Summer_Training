@@ -1,0 +1,90 @@
+Problem 1: min = 2
+
+lvl 1:
+Item		Support
+HotDogs		4
+Buns		2
+Coke		3
+Chips		4
+Ketchup		2
+
+lvl 2:
+Items			Support
+HotDogs,Buns		2
+HotDogs,Coke		2
+HotDogs,Chips		2
+HotDogs,Ketchup		1 ====> REJECTED
+Buns,Coke		0 ====> REJECTED
+Buns,Chips		0 ====> REJECTED
+Buns,Ketchup		1 ====> REJECTED
+Coke,Chips		2
+Coke,Ketchup		0 ====> REJECTED
+Chips,Ketchup		1 ====> REJECTED
+
+lvl 3:
+Items			Support
+HotDogs,Buns,Coke	0 ====> REJECTED
+HotDogs,Buns,Chips	0 ====> REJECTED
+Coke,Chips,HotDogs	2
+Buns,Coke,Chips		0 ====> REJECTED
+
+
+Coke => (Chips,HotDogs) [supp = 2/6, conf = 0.67]
+(Chips,HotDogs) => Coke [supp = 2/6, conf = 1]
+Chips => (Coke,HotDogs) [supp = 2/6, conf = 0.5]
+(Coke,HotDogs) => Chips [supp = 2/6, conf = 1]
+HotDogs => (Coke,Chips) [supp = 2/6, conf = 0.5]
+(Coke,Chips) => HotDogs [supp = 2/6, conf = 1]
+
+
+
+
+Problem 2: min = 3
+lvl 1:
+Items			Support
+A			3		
+B			3
+C			2 ===> REJECTED
+D			5
+E			4
+F			3
+G			1 ===> REJECTED
+H			1 ===> REJECTED
+I			1 ===> REJECTED
+J			1 ===> REJECTED
+K			1 ===> REJECTED
+
+lvl 2:
+Items			Support
+A,B			1 ===> REJECTED
+A,D			3
+A,E			2 ===> REJECTED
+A,F			1 ===> REJECTED
+B,D			3
+B,E			3
+B,F			2 ===> REJECTED
+D,E			4
+D,F			3
+E,F			2 ===> REJECTED
+
+lvl 3:
+Items			Support
+A,D,E			2 ===> REJECTED
+A,D,B			0 ===> REJECTED
+D,B,E			3
+A,B,F			1 ===> REJECTED
+A,D,F			2 ===> REJECTED
+A,E,F			1 ===> REJECTED
+D,E,F			2 ===> REJECTED
+A,E,B			1 ===> REJECTED
+E,B,F			2 ===> REJECTED
+B,F,D			2 ===> REJECTED
+
+
+
+
+
+
+
+
+
