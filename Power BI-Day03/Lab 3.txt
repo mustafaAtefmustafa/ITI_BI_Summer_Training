@@ -1,0 +1,37 @@
+@@ API
+
+- Data Source: https://jsonplaceholder.typicode.com
+
+/Users
+/posts
+/comments
+/albums
+/photos (Optional)
+
+- Rename Query Name
+- Rename Columns 
+- Change Datatype 
+
+Modeling:
+- Add post url
+- # Users Measure
+- # Posts Measure
+- # Comments Measure
+- # Alnums Measure
+
+Visuals (8): (User Measures)
+- # Users Card 
+- # Posts Card 
+- # Comments Card 
+- # Alnums Card  
+
+
+- Photo Details in Table (Add post url and change it to icon) (Optional)
+
+--- Mobile Layout 
+
+-- Good Colors, Layout and Chart Titles (Meaningful)
+
+-----------------------
+
+Install and Configure Power BI Report Server and Publish Lab 3 on it
